@@ -1,0 +1,32 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main(){
+
+ int k,n,count=0,inValue,sqr;
+ cin>>k;
+
+ while(k>>0){
+    cin>>n;
+    inValue=1;
+    count=0;
+    while(n != count){
+        inValue++;
+        sqr = sqrt(inValue);
+        int i;
+        for(i=2;i<=sqr;i++){
+            if(inValue % i == 0){
+                break;
+            }
+        }
+
+        if(i>sqr){
+            count++;
+        }
+
+    }
+    cout<<inValue<<endl;
+    k--;
+
+ }
+}
