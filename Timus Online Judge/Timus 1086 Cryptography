@@ -3,30 +3,30 @@
 using namespace std;
 int main(){
 
- int k,n,count=0,inValue,sqr;
- cin>>k;
+    int k,n,i,index=1,inValue=1,sqr,prime[15000];
 
- while(k>>0){
-    cin>>n;
-    inValue=1;
-    count=0;
-    while(n != count){
-        inValue++;
+    prime[0]=2;
+    while(index != 15000){
+        inValue += 2;
         sqr = sqrt(inValue);
-        int i;
+
         for(i=2;i<=sqr;i++){
             if(inValue % i == 0){
                 break;
             }
         }
-
         if(i>sqr){
-            count++;
+            prime[index]=inValue;
+            index++;
         }
 
     }
-    cout<<inValue<<endl;
-    k--;
+    cin>>k;
 
- }
+    while(k!=0){
+        cin>>n;
+        cout<<prime[n-1]<<endl;
+        k--;
+    }
 }
+
